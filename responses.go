@@ -1,5 +1,11 @@
 package models
 
+type Response[T any] struct {
+	Function string `json:"function"`
+
+	Response T `json:"response"`
+}
+
 // Cars
 
 type AddCarResponse struct {
