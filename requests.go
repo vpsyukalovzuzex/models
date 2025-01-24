@@ -50,3 +50,23 @@ type AddRegistrationToUserIdRequest struct {
 type GetUsersByIdsRequest struct {
 	Ids []string `json:"ids"`
 }
+
+// Gateway
+
+type GetCarsEnginesByBrandRequest struct {
+	Brand string `json:"brand" validate:"required,gte=1,lte=100"`
+}
+
+type GetCarEngineByCarIdRequest struct {
+	CarId string `json:"car_id" validate:"required"`
+}
+
+type GetEnginesRequest struct{}
+
+type GetUserAllCarsRequest struct {
+	UserId string `json:"user_id"`
+}
+
+type GetUserAllEnginesRequest struct {
+	UserId string `json:"user_id"`
+}

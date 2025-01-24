@@ -37,3 +37,21 @@ type AddRegistrationToUserIdResponse struct {
 type GetUsersByIdsResponse struct {
 	Users []UserResponse `json:"users"`
 }
+
+// Gateway
+
+type GetCarEngineByCarIdResponse struct {
+	Engine EngineResponse `json:"engine"`
+}
+
+type GetEnginesResponse struct {
+	Engines []EngineResponse `json:"engines"`
+}
+
+type GetUserAllCarsResponse struct {
+	Registration []RegistrationResponse `json:"registration"`
+}
+
+type GetUserAllEnginesResponse struct {
+	Engines []EngineResponse `json:"engines"`
+}
