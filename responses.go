@@ -46,6 +46,10 @@ type GetUsersByIdsResponse struct {
 
 // Gateway
 
+type GetCarsEnginesByBrandResponse struct {
+	Engines []EngineResponse `json:"engines"`
+}
+
 type GetCarEngineByCarIdResponse struct {
 	Engine EngineResponse `json:"engine"`
 }
