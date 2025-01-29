@@ -4,11 +4,11 @@ type Response[T any] struct {
 	Function string `json:"function"`
 
 	Response T `json:"response"`
-
-	Error ErrorResponse `json:"error"`
 }
 
 type ErrorResponse struct {
+	Function string `json:"function"`
+
 	Code int `json:"code"`
 
 	Message string `json:"message"`
