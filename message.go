@@ -6,11 +6,7 @@ type Message struct {
 
 	Data []byte `json:"data"`
 
-	successed bool `json:"successed"`
-}
-
-func (m *Message) IsSuccessed() bool {
-	return !m.successed
+	Successed bool `json:"successed"`
 }
 
 func SuccessedMessage(userID string, function string, data []byte) *Message {
@@ -18,7 +14,7 @@ func SuccessedMessage(userID string, function string, data []byte) *Message {
 		UserId:    userID,
 		Function:  function,
 		Data:      data,
-		successed: true,
+		Successed: true,
 	}
 }
 
@@ -27,6 +23,6 @@ func FailedMessage(userID string, function string, data []byte) *Message {
 		UserId:    userID,
 		Function:  function,
 		Data:      data,
-		successed: false,
+		Successed: false,
 	}
 }
