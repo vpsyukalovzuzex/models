@@ -4,7 +4,7 @@ type Message struct {
 	UserId   string `json:"user_id"`
 	Function string `json:"function"`
 
-	Error Error `json:"error"`
+	Success bool `json:"success"`
 
 	Data []byte `json:"data"`
 }
