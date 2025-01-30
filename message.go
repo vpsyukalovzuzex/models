@@ -4,13 +4,29 @@ type Message struct {
 	UserId   string `json:"user_id"`
 	Function string `json:"function"`
 
-	Success bool `json:"success"`
-
 	Data []byte `json:"data"`
+
+	successed bool `json:"successed"`
 }
 
-type Error struct {
-	Code int `json:"code"`
+func (m *Message) IsSuccessed() bool {
+	return !m.successed
+}
 
-	Message string `json:"message"`
+func SuccessedMessage(userID string, function string, data []byte) *Message {
+	return &Message{
+		UserId:    userID,
+		Function:  function,
+		Data:      data,
+		successed: true,
+	}
+}
+
+func FailedMessage(userID string, function string, data []byte) *Message {
+	return &Message{
+		UserId:    userID,
+		Function:  function,
+		Data:      data,
+		successed: false,
+	}
 }
